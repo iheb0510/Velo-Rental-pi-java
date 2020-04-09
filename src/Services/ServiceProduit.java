@@ -120,6 +120,47 @@ public class ServiceProduit {
 
         return listP;
     }
+      
+ public Produit lectureProduitparref(String  nom)
+             
+{ 
+    Produit p = new Produit();
+    
+    try { 
+        
+            String query ="SELECT * from produit WHERE Ref_produit='"+nom+"'" ; 
+            
+            Statement st=cnx.createStatement();
+    ResultSet res = st.executeQuery(query);
+         res.last();
+          int nbr =res.getRow() ;  
+          if (nbr!=0)
+          {
+              
+                p.setId(res.getInt("id"));
+                p.setRef_produit(res.getString("Ref_produit"));
+                p.setDesignation(res.getString("Designation"));
+                p.setDescription(res.getString("Description"));
+                p.setDisponible(res.getBoolean("Disponible"));
+                p.setPrix(res.getDouble("Prix"));
+                p.setImage(res.getString("image"));
+                p.setStatut(res.getBoolean("Statut"));
+                p.setId_Magasin(res.getInt("id_Magasin"));
+                p.setPrix_heure(res.getDouble("prix_heure"));
+                
+             
+          } else {
+                  System.out.println("la magasin est non trouver ") ; 
+          }   
+    
+       }catch (SQLException ex){
+            System.out.println(ex.getMessage()) ; 
+            
+        }
+    
+      
+       return p;  
+}
     
     
 }

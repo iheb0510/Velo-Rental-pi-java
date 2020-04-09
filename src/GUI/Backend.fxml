@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="346.0" prefWidth="626.0" style="-fx-background-color: #2d3436;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.BackendController">
+   <children>
+      <AnchorPane id="AnchorPane" prefHeight="450.0" prefWidth="769.0" style="-fx-background-color: #fff;" styleClass="mainFxmlClass">
+         <stylesheets>
+            <URL value="@../Documents/NetBeansProjects/donation/src/GUI/back.css" />
+         </stylesheets>
+         <children>
+            <VBox prefHeight="456.0" prefWidth="208.0" style="-fx-background-color: #dfe6e9;">
+               <children>
+                  <Label prefHeight="124.0" prefWidth="208.0">
+                     <padding>
+                        <Insets left="20.0" top="2.0" />
+                     </padding>
+                     <graphic>
+                        <ImageView fitHeight="124.0" fitWidth="166.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Images/logo.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Label>
+                  <Label prefHeight="69.0" prefWidth="209.0" style="-fx-background-color: #c50b0#2d3436b;" text="           Dashboard" textFill="#171716">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </Label>
+                  <AnchorPane prefHeight="170.0" prefWidth="260.0">
+                     <children>
+                        <JFXButton fx:id="btn_accueul" accessibleText="btn_found" onAction="#handleButtonAction" prefHeight="45.0" prefWidth="208.0" text="ACCEUIL" textFill="#171716" />
+                        <JFXButton fx:id="btn_region" layoutY="45.0" onAction="#handleButtonAction" prefHeight="45.0" prefWidth="208.0" text="REGION" textFill="#171716" />
+                        <JFXButton fx:id="btn_location" layoutY="90.0" onAction="#handleButtonAction" prefHeight="45.0" prefWidth="208.0" text="LOCATION" textFill="#171716" />
+                        <JFXButton fx:id="btn_magasin" layoutY="130.0" onAction="#handleButtonAction" prefHeight="39.0" prefWidth="208.0" text="Magasin" textFill="#171716" />
+                     </children>
+                  </AnchorPane>
+               </children>
+            </VBox>
+            <AnchorPane layoutX="666.0" layoutY="382.0" prefHeight="29.0" prefWidth="80.0" style="-fx-background-color: #fff;" />
+            <AnchorPane layoutX="208.0" layoutY="-54.0" prefHeight="510.0" prefWidth="566.0" style="-fx-background-color: #636e72;">
+               <children>
+                  <ImageView fitHeight="320.0" fitWidth="566.0" layoutX="-1.0" layoutY="127.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Images/velo.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

@@ -141,6 +141,58 @@ public class ServiceRegion {
     
       return p;
 }
+  public boolean chercherregionparnom( String nom)
+        
+{  
+    try { 
+                
+            String query ="SELECT * from region WHERE nom='"+nom+"'"  ; 
+            Statement st=cnx.createStatement();
+    ResultSet rst = st.executeQuery(query);
+         rst.last();
+          int nbr =rst.getRow() ;  
+          if (nbr!=0)
+          {
+                  return true ; 
+       
+          }   
+    
+       }catch (SQLException ex){
+            System.out.println(ex.getMessage()) ; 
+            
+        }
+    
+ return false;
+}
+  
+  public Region lectureRegionparnom( String nom)
+             
+{ 
+        Region p = new Region();
+    try { 
+            String query ="SELECT * from region WHERE nom='"+nom+"'" ; 
+            Statement st=cnx.createStatement();
+    ResultSet res = st.executeQuery(query);
+         res.last();
+          int nbr =res.getRow() ;  
+          if (nbr!=0)
+          {
+              
+                p.setId_reg(res.getInt("id_reg"));
+                p.setNom(res.getString("nom"));
+                
+                   
+          } else {
+                  System.out.println("la reservation est non trouver ") ; 
+          }   
+    
+       }catch (SQLException ex){
+            System.out.println(ex.getMessage()) ; 
+            
+        }
+    
+      return p;
+}
 
 
 }

@@ -190,5 +190,40 @@ public void frrfrfrf (int a){
         return listM;
     }
     
+ public Magasin lectureMagasinparnom(String  nom)
+             
+{ 
+    Magasin A = new Magasin();
+    
+    try { 
+        
+            String query ="SELECT * from magasin WHERE name_M='"+nom+"'" ; 
+            
+            Statement st=cnx.createStatement();
+    ResultSet res = st.executeQuery(query);
+         res.last();
+          int nbr =res.getRow() ;  
+          if (nbr!=0)
+          {
+              
+                A.setId(res.getInt("id"));
+                A.setName_M(res.getString("name_M"));
+                A.setAdresse(res.getString("Adresse"));
+                A.setTel(res.getInt("tel"));
+                A.setId_region(res.getInt("id_region"));
+                
+             
+          } else {
+                  System.out.println("la magasin est non trouver ") ; 
+          }   
+    
+       }catch (SQLException ex){
+            System.out.println(ex.getMessage()) ; 
+            
+        }
+    
+      
+       return A;  
+}
     
 }
