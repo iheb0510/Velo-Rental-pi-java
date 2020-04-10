@@ -48,7 +48,7 @@ public class AjouterRegionController implements Initializable {
     
     @FXML
     private void ajouterregion(ActionEvent event) {
-        
+       if(nom.getText().length() >0 ) {
         Region a = new Region(nom.getText());
         ServiceRegion sr = new ServiceRegion();
        boolean trouve = sr.chercherregionparnom(nom.getText());
@@ -59,8 +59,13 @@ public class AjouterRegionController implements Initializable {
           s.setTitle("information");
           s.setContentText("la region déja existe");
           s.showAndWait();
-        
-    }
+       }  
+    }else{
+           Alert s = new Alert(AlertType.INFORMATION);
+          s.setTitle("information");
+          s.setContentText("champ vide");
+          s.showAndWait();
+       }
        
 }
 

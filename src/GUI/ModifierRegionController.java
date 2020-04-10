@@ -16,6 +16,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
@@ -72,6 +73,7 @@ public class ModifierRegionController implements Initializable {
 
     @FXML
     private void ajouterregion(ActionEvent event) {
+         if(nom.getText().length() >0 ) {
          Region c = new Region();   
         c.setId_reg(a);
            
@@ -90,8 +92,13 @@ public class ModifierRegionController implements Initializable {
         } catch (IOException ex) {
             System.out.println(ex.getMessage());
         }
-    }
+    }else{
+          Alert s = new Alert(Alert.AlertType.INFORMATION);
+          s.setTitle("information");
+          s.setContentText("champ vide");
+          s.showAndWait();
+       }  
         
     
-    
+    }   
 }

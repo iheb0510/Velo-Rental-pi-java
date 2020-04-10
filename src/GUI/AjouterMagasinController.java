@@ -20,6 +20,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
@@ -89,6 +90,7 @@ public class AjouterMagasinController implements Initializable {
 
     @FXML
     private void ajoutermagasin(ActionEvent event) {
+        if(nom.getText().length() >0 && adresse.getText().length()>0 && tel.getText().length() >0 ) {
         ServiceRegion sr = new ServiceRegion();
         Region R = sr.lectureRegionparnom(cmb_region.getValue());
         System.out.println(R.getId_reg());
@@ -99,6 +101,12 @@ public class AjouterMagasinController implements Initializable {
        
         ma.ajouuterMagasin(a);
         
-    }
+    }else{
+          Alert s = new Alert(Alert.AlertType.INFORMATION);
+          s.setTitle("information");
+          s.setContentText("champ vide");
+          s.showAndWait();
+       }  
     
     }
+}

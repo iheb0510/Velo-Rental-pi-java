@@ -114,7 +114,7 @@ public class ModifierMagasinController implements Initializable {
         sc.modifierMagasin(m.getId(), nom.getText(),adresse.getText(),jml,R.getId_reg());
                 
         try {
-        javafx.scene.Parent tableview = FXMLLoader.load(getClass().getResource("AfficherRegion.fxml"));
+        javafx.scene.Parent tableview = FXMLLoader.load(getClass().getResource("AfficherMagasin.fxml"));
         Scene sceneview = new Scene(tableview);
         Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
         window.setScene(sceneview);
