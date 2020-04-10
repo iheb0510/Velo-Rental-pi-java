@@ -16,6 +16,7 @@ import Services.ServiceRegion;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXTextField;
+
 import java.io.IOException;
 import java.net.URL;
 import java.sql.Date;
@@ -27,15 +28,21 @@ import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
+import javafx.util.Duration;
+import org.controlsfx.control.Notifications;
 
 
 /**
@@ -189,6 +196,24 @@ public class AjouterLocationController implements Initializable {
         Location k = new Location(date1,date2,R.getId(),4);
        
         sl.ajouterlocation2(k);
+        Image img = new Image("Images/success.png");
+        Notifications notificationbuilder = Notifications.create()
+                   .title("ajouter location'")
+                   .text("ajout réussie")
+                   .graphic(new ImageView (img) )
+                   .hideAfter(Duration.seconds(5))
+                   .position(Pos.BOTTOM_RIGHT)
+                   .onAction(new EventHandler<ActionEvent> (){
+                      @Override 
+                       public void handle(ActionEvent event){
+                         System.out.println("clicked on notification");
+                       }
+                       
+                   });
+                 notificationbuilder.darkStyle();
+                notificationbuilder.showConfirm();
+                   
+        
     }else{ Alert s = new Alert(Alert.AlertType.INFORMATION);
           s.setTitle("information");
           s.setContentText("erreur date");

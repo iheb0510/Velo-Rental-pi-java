@@ -98,8 +98,9 @@ public class AjouterMagasinController implements Initializable {
         Magasin a = new Magasin(nom.getText(),adresse.getText(),jml,R.getId_reg());
         ServiceMagasin ma = new ServiceMagasin();
        
-       
         ma.ajouuterMagasin(a);
+        
+       
         
     }else{
           Alert s = new Alert(Alert.AlertType.INFORMATION);
