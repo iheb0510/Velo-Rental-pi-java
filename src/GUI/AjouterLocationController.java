@@ -98,7 +98,7 @@ public class AjouterLocationController implements Initializable {
     private void handleButtonAction(ActionEvent event) {
         if (event.getSource() == btn_acceuil) {
            try {
-        javafx.scene.Parent tableview = FXMLLoader.load(getClass().getResource("/GUI/Backend.fxml"));
+        javafx.scene.Parent tableview = FXMLLoader.load(getClass().getResource("/GUI/Front.fxml"));
         Scene sceneview = new Scene(tableview);
         Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
         window.setScene(sceneview);
@@ -185,7 +185,7 @@ public class AjouterLocationController implements Initializable {
         
         if(cmb_velo.getValue()!= null){
         Produit R = sp.lectureProduitparref(cmb_velo.getValue());
-        ZoneId defaultZoneId = ZoneId.systemDefault();
+        
          if((start_l.getValue()!= null) && (end_l.getValue()!= null)){
         Date date1 = Date.valueOf(start_l.getValue().toString());
         Date date2 = Date.valueOf(end_l.getValue().toString());
@@ -196,6 +196,7 @@ public class AjouterLocationController implements Initializable {
         Location k = new Location(date1,date2,R.getId(),4);
        
         sl.ajouterlocation2(k);
+        
         Image img = new Image("Images/success.png");
         Notifications notificationbuilder = Notifications.create()
                    .title("ajouter location'")
@@ -213,7 +214,15 @@ public class AjouterLocationController implements Initializable {
                  notificationbuilder.darkStyle();
                 notificationbuilder.showConfirm();
                    
-        
+        try {
+        javafx.scene.Parent tableview = FXMLLoader.load(getClass().getResource("/GUI/AjouterLocation.fxml"));
+        Scene sceneview = new Scene(tableview);
+        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+        window.setScene(sceneview);
+        window.show();
+        } catch (IOException ex) {
+            System.out.println(ex.getMessage());
+        }
     }else{ Alert s = new Alert(Alert.AlertType.INFORMATION);
           s.setTitle("information");
           s.setContentText("erreur date");

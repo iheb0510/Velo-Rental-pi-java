@@ -59,11 +59,11 @@
                </children>
             </VBox>
             <AnchorPane layoutX="666.0" layoutY="382.0" prefHeight="29.0" prefWidth="80.0" style="-fx-background-color: #fff;" />
-            <AnchorPane layoutX="208.0" prefHeight="456.0" prefWidth="561.0" style="-fx-background-color: #636e72;">
+            <AnchorPane layoutX="208.0" prefHeight="456.0" prefWidth="561.0" style="-fx-background-color: #FFFFFF;">
                <children>
                   <AnchorPane layoutX="-4.0" prefHeight="40.0" prefWidth="560.0" style="-fx-background-color: #c50b0#2d3436b;">
                      <children>
-                        <Label layoutX="18.0" layoutY="3.0" prefHeight="25.0" prefWidth="144.0" text="Ajouter location" textFill="#fcfafa">
+                        <Label layoutX="18.0" layoutY="3.0" prefHeight="25.0" prefWidth="144.0" text="Ajouter location" textFill="#110000">
                            <font>
                               <Font name="System Bold Italic" size="16.0" />
                            </font>
@@ -79,7 +79,7 @@
                      </font></Button>
                   <DatePicker fx:id="start_l" layoutX="105.0" layoutY="250.0" onAction="#datedebut" prefHeight="25.0" prefWidth="400.0" />
                   <DatePicker fx:id="end_l" layoutX="105.0" layoutY="309.0" onAction="#datefin" prefHeight="25.0" prefWidth="400.0" />
-                  <Label layoutX="26.0" layoutY="254.0" text="Date debut" textFill="#fffbfb" />
+                  <Label layoutX="26.0" layoutY="254.0" text="Date debut" textFill="#1e0101" />
                   <JFXTextField fx:id="Montant" disable="true" editable="false" layoutX="401.0" layoutY="384.0" prefHeight="25.0" prefWidth="120.0" unFocusColor="#4cb545">
                      <effect>
                         <Lighting>
@@ -95,8 +95,8 @@
                         <Font size="18.0" />
                      </font>
                   </JFXTextField>
-                  <Label layoutX="34.0" layoutY="313.0" text="Date fin" textFill="#fffbfb" />
-                  <Label layoutX="315.0" layoutY="384.0" text="Prix total" textFill="#fcfcfc">
+                  <Label layoutX="34.0" layoutY="313.0" text="Date fin" textFill="#2f0101" />
+                  <Label layoutX="315.0" layoutY="384.0" text="Prix total" textFill="#140101">
                      <font>
                         <Font size="18.0" />
                      </font>
@@ -109,7 +109,7 @@
                         <Font size="18.0" />
                      </font>
                   </JFXTextField>
-                  <Label layoutX="37.0" layoutY="384.0" text="Prix heure" textFill="WHITE">
+                  <Label layoutX="37.0" layoutY="384.0" text="Prix heure" textFill="#1e0202">
                      <font>
                         <Font size="18.0" />
                      </font>

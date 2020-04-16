@@ -154,7 +154,7 @@ public class AfficherMagasinController implements Initializable {
         }
         } else if (event.getSource() == btn_location) {
             try {
-            javafx.scene.Parent tableview = FXMLLoader.load(getClass().getResource("/GUI/AjouterLocation.fxml"));
+            javafx.scene.Parent tableview = FXMLLoader.load(getClass().getResource("/GUI/Afficherlocation.fxml"));
         Scene sceneview = new Scene(tableview);
         Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
         window.setScene(sceneview);

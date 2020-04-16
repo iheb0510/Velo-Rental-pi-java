@@ -78,6 +78,16 @@ public class ServiceLocation {
             pre.executeUpdate();
 
             System.out.println("Insertion Reussie!");
+            
+            String a ="UPDATE produit SET Disponible='0'  WHERE id='"+L.getId_Produit()+"'" ;
+                
+                try {
+                    st = cnx.createStatement();
+                     st.executeUpdate(a) ;
+                     System.out.println("Vélo disponible");
+                } catch (SQLException ex) {
+                   
+                }
 
         } catch (SQLException ex) {
             System.out.println(ex);

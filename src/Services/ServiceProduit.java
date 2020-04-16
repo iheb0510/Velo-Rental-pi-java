@@ -12,6 +12,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -89,8 +90,9 @@ public class ServiceProduit {
        List<Produit> listP = new ArrayList<>();
 
         try {
+            
 
-            String req = "SELECT *from produit WHERE id_Magasin='"+id_magasin+"'" ;
+            String req = "SELECT *from produit WHERE id_Magasin='"+id_magasin+"'AND Disponible='1'" ;
 
             st = cnx.createStatement();
             ResultSet res = st.executeQuery(req);
@@ -128,6 +130,9 @@ public class ServiceProduit {
     
     try { 
         
+        
+        
+        
             String query ="SELECT * from produit WHERE Ref_produit='"+nom+"'" ; 
             
             Statement st=cnx.createStatement();
@@ -150,7 +155,7 @@ public class ServiceProduit {
                 
              
           } else {
-                  System.out.println("la magasin est non trouver ") ; 
+                  System.out.println("le produit est non trouver ") ; 
           }   
     
        }catch (SQLException ex){

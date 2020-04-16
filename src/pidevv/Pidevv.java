@@ -34,7 +34,7 @@ public class Pidevv extends Application {
     @Override
     public void start(Stage stage) throws Exception {
        
-            Parent root = FXMLLoader.load(getClass().getResource("/GUI/Backend.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("/GUI/Mix.fxml"));
 
             Scene scene = new Scene(root);
             stage.setTitle("T-HUNT");

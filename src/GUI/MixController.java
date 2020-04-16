@@ -22,16 +22,12 @@ import javafx.stage.Stage;
  *
  * @author ASUS
  */
-public class BackendController implements Initializable {
+public class MixController implements Initializable {
 
     @FXML
     private JFXButton btn_accueul;
     @FXML
-    private JFXButton btn_region;
-    @FXML
-    private JFXButton btn_location;
-    @FXML
-    private JFXButton btn_magasin;
+    private JFXButton btn_client;
 
     /**
      * Initializes the controller class.
@@ -40,12 +36,12 @@ public class BackendController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
+
     @FXML
     private void handleButtonAction(ActionEvent event) {
-        
-             if ((event.getSource() == btn_region) ) {
+          if ((event.getSource() == btn_accueul) ) {
          try {
-        javafx.scene.Parent tableview = FXMLLoader.load(getClass().getResource("AfficherRegion.fxml"));
+        javafx.scene.Parent tableview = FXMLLoader.load(getClass().getResource("Backend.fxml"));
         Scene sceneview = new Scene(tableview);
         Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
         window.setScene(sceneview);
@@ -53,9 +49,9 @@ public class BackendController implements Initializable {
         } catch (IOException ex) {
             System.out.println(ex.getMessage());
         }
-        } else if (event.getSource() == btn_location) {
+        } else if (event.getSource() == btn_client) {
             try {
-            javafx.scene.Parent tableview = FXMLLoader.load(getClass().getResource("/GUI/Afficherlocation.fxml"));
+            javafx.scene.Parent tableview = FXMLLoader.load(getClass().getResource("/GUI/Front.fxml"));
         Scene sceneview = new Scene(tableview);
         Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
         window.setScene(sceneview);
@@ -64,17 +60,7 @@ public class BackendController implements Initializable {
             System.out.println(ex.getMessage());
         }
          
-        } else if (event.getSource() == btn_magasin) {
-           try {
-        javafx.scene.Parent tableview = FXMLLoader.load(getClass().getResource("/GUI/AfficherMagasin.fxml"));
-        Scene sceneview = new Scene(tableview);
-        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
-        window.setScene(sceneview);
-        window.show();
-        } catch (IOException ex) {
-            System.out.println(ex.getMessage());
-        }}
-          
+        }
     }
     
 }

@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="346.0" prefWidth="626.0" style="-fx-background-color: #2d3436;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.BackendController">
+<AnchorPane id="AnchorPane" prefHeight="346.0" prefWidth="626.0" style="-fx-background-color: #2d3436;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.FrontController">
    <children>
       <AnchorPane id="AnchorPane" prefHeight="450.0" prefWidth="769.0" style="-fx-background-color: #fff;" styleClass="mainFxmlClass">
          <stylesheets>
@@ -31,7 +31,7 @@
                         </ImageView>
                      </graphic>
                   </Label>
-                  <Label prefHeight="69.0" prefWidth="209.0" style="-fx-background-color: #c50b0#2d3436b;" text="           Dashboard" textFill="#171716">
+                  <Label prefHeight="69.0" prefWidth="209.0" style="-fx-background-color: #c50b0#2d3436b;" textFill="#171716">
                      <font>
                         <Font name="System Bold" size="18.0" />
                      </font>
@@ -44,10 +44,13 @@
                         <JFXButton fx:id="btn_accueul" accessibleText="btn_found" onAction="#handleButtonAction" prefHeight="45.0" prefWidth="208.0" text="ACCEUIL" textFill="#6ab04c">
                            <font>
                               <Font name="System Bold Italic" size="18.0" />
-                           </font></JFXButton>
-                        <JFXButton fx:id="btn_region" layoutY="45.0" onAction="#handleButtonAction" prefHeight="45.0" prefWidth="208.0" text="REGION" textFill="#171716" />
-                        <JFXButton fx:id="btn_location" layoutY="90.0" onAction="#handleButtonAction" prefHeight="45.0" prefWidth="208.0" text="LOCATION" textFill="#171716" />
-                        <JFXButton fx:id="btn_magasin" layoutY="130.0" onAction="#handleButtonAction" prefHeight="39.0" prefWidth="208.0" text="Magasin" textFill="#171716" />
+                           </font>
+                        </JFXButton>
+                        <JFXButton fx:id="btn_location" layoutY="45.0" onAction="#handleButtonAction" prefHeight="45.0" prefWidth="208.0" text="Location" textFill="#171716">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </JFXButton>
                      </children>
                   </AnchorPane>
                </children>
